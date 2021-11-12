@@ -4,19 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Chalkboard</title>
+    <link rel="stylesheet" href="src/css/student_homepage.css">
 </head>
 
 <body>
-    <h1><a href="index.html">Chalkboard</a></h1>
-    <h1>Student</h1>
-    <p> Select A class</p>
-    <div class="imgcontainer">
-        <img src="src/img/person icon.png" alt="Avatar" class="avatar">
+    <nav class="student_nav">
+        <div class="nav_1">
+            <h1 class="chalkboard">Chalkboard Student</h1>
+        </div>
+        <div class="nav_2">
+            <div class = "add">
+                <a href="professor_addClass.html">
+                    <img class="plus" src="src/img/plus.svg">
+                </a>
+            </div>
+            <div class="imgcontainer">
+                <a>
+                    <img src="src/img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class ="select">
+        <p> Select a class</p>
     </div>
-    <ul style="list-style-type:none">
-        <li><a href="student_course.html">Class 101</a></li>
-        <li><a href="student_course.html">Class 202</a></li>
-        <li><a href="student_course.html">Class 303</a></li>
+    <ul style="list-style-type:none" class = "class_nav">
+        <li class ="list_class">
+            <div class = "title">
+                <a href="student_course.html">
+                    <div class = "class">Class 101</div>
+                    <div class ="prof">Professor1</div>
+                </a>
+            </div>
+            <div class = "desc">
+                This is class 1
+            </div>
+        </li>
+        <li class="list_class">
+            <div class="title">
+                <a href="student_course.html">
+                    <div class="class">Class 202</div>
+                    <div class="prof">Professor2</div>
+                </a>
+            </div>
+            <div class="desc">
+                This is class 2
+            </div>
+        </li>
+        <li class="list_class">
+            <div class="title">
+                <a href="student_course.html">
+                    <div class="class">Class 303</div>
+                    <div class="prof">Professor3</div>
+                </a>
+            </div>
+            <div class="desc">
+                This is class 3
+            </div>
+        </li>
     </ul>
 </body>
 
