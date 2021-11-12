@@ -13,11 +13,11 @@ body {
   width: 100%;
   top: 0;
   z-index: 10;
-  margin-left: 1rem;
 }
 
 .nav_1 {
   width: 50%;
+  margin-left: 1rem;
 }
 
 .chalkboard a {
@@ -37,10 +37,6 @@ body {
 }
 
 .plus {
-  width: 4rem;
-}
-
-.avatar {
   width: 4rem;
 }
 
