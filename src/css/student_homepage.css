@@ -36,6 +36,24 @@ body {
   margin-right: 1rem;
 }
 
+.search {
+  margin-right: 1rem;
+}
+
+.nav_2 input[type="text"] {
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+}
+
+.nav_2 button {
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
 .plus {
   width: 4rem;
 }
