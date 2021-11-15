@@ -84,3 +84,7 @@ body {
   text-decoration: none;
   color: #0645ad;
 }
+
+a:hover {
+  cursor: pointer;
+}

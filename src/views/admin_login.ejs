@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chalkboard</title>
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <form class="form-cont">
+                <div class="container">
+                    <h1 class="chalkboard"><a href="index.html">Chalkboard</a></h1>
+                    <p> Admin Login</p>
+                    <div class="inputBox">
+                        <label></label>
+                        <input type="text" placeholder="Username" name="username" required>
+                    </div>
+                    <div class="inputBox">
+                        <label></label>
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <button type="submit" class="loginbtn">Login</button>
+                </div>
+            </form>
+            <button type="submit" class="signup" onclick="location.href='/sign_up'">Sign Up</button>
+            <a class="stud" onclick="location.href='/'" > Enter as Student<br></a>
+            <a class="prof" onclick="location.href='/login_professor'"> Enter as Professor<br></a>
+        </div>
+    </body>
+</html>

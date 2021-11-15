@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href ="/css/signup.css">
+</head>
+
+<body>
+    <div class="main">
+        <form class = "form-cont">
+            <h1>Sign Up for Chalkboard</h1>
+            <p>Please fill in this form to create an account.</p>
+            <div class="inputBox">
+                <label for="first"></label>
+                <input type="text" placeholder="First Name" name="first" required>
+            </div>
+            <div class="inputBox">
+                <label for="last"></label>
+                <input type="text" placeholder="Last Name" name="last" required>
+            </div>
+            <div class="inputBox">
+                <label for="email"></label>
+                <input type="text" placeholder="Email" name="email" required>
+            </div>
+            <div class="inputBox">
+                <label for="psw"></label>
+                <input type="password" placeholder="Password" name="psw" required>
+            </div>
+            <div class="inputBox">
+                <label for="psw-repeat"></label>
+                <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+            </div>
+            <div class="checkbox">
+                <input id="student" name="userType" value="student" type="radio">
+                <label for="student">Student</label>
+                <input id="professor" name="userType" value="professor" type="radio">
+                <label for="professor">Professor</label>
+                <input id="admin" name="userType" value="admin" type="radio">
+                <label for="admin">Admin</label>
+            </div>
+            <button type="submit" class="signupbtn">Sign Up</button>
+        </form>
+        <button type="button" class="cancelbtn" onclick="location.href='/'">Cancel</button>
+    </div>
+</body>
+
+</html>
