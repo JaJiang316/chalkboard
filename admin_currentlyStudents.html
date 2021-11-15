@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Chalkboard</title>
-  <link rel="stylesheet" href="styles.css">
-
-</head>
-<body>
-<h1><a href="index.html">Chalkboard</a></h1>
-<h2>Admin</h2>
-<p> Select an option </p>
-<ul style="list-style-type:none">
-  <li><a href="admin_currentlyEnrolled.html">Currently Enrolled</a></li>
-  <li><a href="admin_coursesAvailable.html">Courses Available </a></li>
-  <li><a href="admin_dataHistory.html">Data History</a></li>
-</ul>
-<p>Students Enrolled</p>
-<textarea>Students Enrolled in Classes</textarea>
-
-<br>
-<br>
-
-<a href="admin_currentlyEnrolled.html">
-  <button>Back</button>
-</a>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/css/admin_course_nav.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="admin_nav">
+          <div class="nav_1">
+            <h1 class="chalkboard">Chalkboard Admin</h1>
+          </div>
+          <div class="nav_2">
+            <div class="list">
+              <a href="admin_currentlyEnrolled.html">Currently Enrolled</a>
+            </div>
+            <div class="list">
+              <a href="admin_coursesAvailable.html">Courses Available </a>
+            </div>
+            <div class="list">
+              <a href="admin_dataHistory.html">Data History</a>
+            </div>
+          </div>
+          <div class="nav_3">
+            <div class="leave">
+                <a href="admin_homePage.html">
+                    <button>Leave</button>
+                </a>
+            </div>
+            <div class="imgcontainer">
+                <img src="src/img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+            </div>
+        </div>
+      </nav>
+    </header>
+    <p>Students Enrolled</p>
+    <textarea>Students Enrolled in Classes</textarea>
+  </body>
 </html>
