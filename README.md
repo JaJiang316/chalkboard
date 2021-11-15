@@ -27,3 +27,7 @@ Talking to a second person, in this my partner was great because we were able to
 
 David Guzman
 - During this assignment I completed the HTML for the professor side of the website. During this stage of the website, I tried to make the website have a flow without having any deadends in the site. Making each link link to another page was something that I tried to achive during this D1. I have also completed the admin side of the website. In the admin side I added pages to see the currently enrolled, courses available, and data history for the students, courses and history of users searches and results.  
+
+# D2 CSS:
+Completed the CSS for the website. Keeping the orginal format of the the HTML we constructed, CSS was added to make the website more appealing to the user.
+
