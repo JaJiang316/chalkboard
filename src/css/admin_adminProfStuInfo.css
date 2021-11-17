@@ -4,12 +4,12 @@ body {
   font-family: sans-serif;
 }
 
-.textbook {
+.info {
   text-align: center;
   justify-content: center;
 }
 
-.textbook_items {
+.info_items {
   border: none;
   margin: 0.0625rem 1.5625rem 1.5625rem 0.0625rem;
   width: 18.75rem;
