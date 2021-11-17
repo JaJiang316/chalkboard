@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Chalkboard</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="src/css/professor_course_nav.css">   
+    <link rel="stylesheet" href="src/css/professor_course_nav.css">  
+    <link rel="stylesheet" href="src/css/professor_textbook.css"> 
 </head>
 <body>
     <header>
@@ -49,11 +50,41 @@
             </div>
         </nav>
     </header>
-<p>Textbook Manager</p>
-<ul style="list-style-type: none">
-    <li><a href="professor_textbookAddTb.html">Add Textbook</a></li>
-    <li><a href="professor_textbookAssign.html">Assign Textbook pages</a></li>
-</ul>
+<div class="textbook">
+    <div class="title">
+        <h1>Textbook Manager</h1>
+    </div>
+    <div class="textbook_items">
+        <form>
+            <div class="textbook_post">
+                <div class="enter">
+                    <label for="textbooks"></label>
+                    <input placeholder="Enter Textbook or Textbook pages" name="textbooks" type="text">
+                </div>
+                <div class="enter_post">
+                    <input value="Post" type="submit">
+                </div>
+            </div>
+        </form>
+        <div class="item">
+            <div class="text">
+                Textbook1
+            </div>
+            <span>
+                Read pg 1 Chapter 1
+            </span>
+        </div>
+        <div class="item">
+            <div class="text">
+                Textbook2
+            </div>
+            <span>
+                Read pg 32 Chapter 3.
+            </span>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
