@@ -61,3 +61,7 @@ body {
 .nav_2 .list a:hover {
   background-color: #e0e0e0;
 }
+
+.code {
+  margin-right: 1rem;
+}

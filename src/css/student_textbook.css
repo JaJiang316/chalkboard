@@ -4,12 +4,12 @@ body {
   font-family: sans-serif;
 }
 
-.upcoming {
+.textbooks {
   text-align: center;
   justify-content: center;
 }
 
-.upcoming_items {
+.textbook_items {
   border: none;
   margin: 0.0625rem 1.5625rem 1.5625rem 0.0625rem;
   width: 18.75rem;
@@ -32,14 +32,18 @@ body {
   padding: 1.5rem 1.5rem;
 }
 
-.prof {
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
 .item span {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.25rem;
+}
+
+.link {
+  margin-top: 1rem;
+  display: block;
+}
+
+.item span {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
