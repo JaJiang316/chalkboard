@@ -58,3 +58,47 @@ body {
 .buttons button {
   margin-left: 1rem;
 }
+
+button {
+  cursor: pointer;
+}
+
+.kick {
+  background-color: #dc3645;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 0.0625rem solid #e0e0e0;
+  color: white;
+}
+
+.deny {
+  background-color: #dc3645;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 0.0625rem solid #e0e0e0;
+  color: white;
+}
+
+.accept {
+  background-color: #007bff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 0.0625rem solid #e0e0e0;
+  color: white;
+}
+
+.promote {
+  background-color: #007bff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 0.0625rem solid #e0e0e0;
+  color: white;
+}
+
+.delete_button {
+  background-color: #dc3645;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 0.0625rem solid #e0e0e0;
+  color: white;
+}
