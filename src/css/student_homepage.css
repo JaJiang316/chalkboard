@@ -33,6 +33,7 @@ body {
   justify-content: space-between;
   align-items: center;
   display: flex;
+  flex-direction: row;
   margin-right: 1rem;
 }
 
@@ -137,4 +138,49 @@ body {
 
 .leave {
   margin-left: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .list-class {
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
+      0 2px 6px 2px rgb(60 64 67 / 15%);
+    border: none;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* .search-item {
+    width: 1rem;
+  }
+
+  .avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: relative;
+  }
+
+  .add img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  .leave a button {
+    margin-left: 1rem;
+    font-size: 10px;
+  }
+
+  .nav-1 {
+    font-size: 5px;
+  } */
 }
