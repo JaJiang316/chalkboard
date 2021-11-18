@@ -59,10 +59,6 @@ body {
   margin-left: 1rem;
 }
 
-button {
-  cursor: pointer;
-}
-
 .kick {
   background-color: #dc3645;
   padding: 8px 15px;
@@ -87,6 +83,11 @@ button {
   color: white;
 }
 
+.accept:hover {
+  background-color: white; /* Green */
+  color: black;
+}
+
 .promote {
   background-color: #007bff;
   padding: 8px 15px;
@@ -100,5 +101,13 @@ button {
   padding: 8px 15px;
   border-radius: 4px;
   border: 0.0625rem solid #e0e0e0;
+  color: white;
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4caf50; /* Green */
   color: white;
 }
