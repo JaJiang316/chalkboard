@@ -4,12 +4,12 @@ body {
   font-family: sans-serif;
 }
 
-.upcoming {
+.lectures {
   text-align: center;
   justify-content: center;
 }
 
-.upcoming-items {
+.lecture-items {
   border: none;
   overflow: hidden;
   position: relative;
@@ -30,16 +30,15 @@ body {
   padding: 1.5rem;
 }
 
-.prof {
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
+.item span {
+  font-size: 1.5rem;
   font-weight: 500;
+  line-height: 1.25rem;
 }
 
-.item span {
-  font-size: 0.8125rem;
-  font-weight: 400;
-  line-height: 1.25rem;
+.task {
+  margin-top: 1rem;
+  display: block;
 }
 
 .name {

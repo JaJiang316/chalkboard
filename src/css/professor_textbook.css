@@ -78,3 +78,13 @@ body {
   color: white;
   cursor: pointer;
 }
+
+.delete {
+  background: red;
+  margin-top: 1rem;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 0.0625rem solid #e0e0e0;
+  color: white;
+  cursor: pointer;
+}
