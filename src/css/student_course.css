@@ -9,10 +9,8 @@ body {
   justify-content: center;
 }
 
-.upcoming_items {
+.upcoming-items {
   border: none;
-  margin: 0.0625rem 1.5625rem 1.5625rem 0.0625rem;
-  width: 18.75rem;
   overflow: hidden;
   position: relative;
   border-radius: 5px;
@@ -29,7 +27,7 @@ body {
   border-radius: 0.5rem;
   overflow-wrap: break-word;
   text-align: start;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem;
 }
 
 .prof {

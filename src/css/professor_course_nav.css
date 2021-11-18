@@ -4,7 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.prof_nav {
+.prof-nav {
   border-bottom: 0.0625rem solid #e0e0e0;
   display: flex;
   flex-direction: row;
@@ -15,20 +15,16 @@ body {
   z-index: 10;
 }
 
-.nav_1 {
+.nav-1 {
   margin-left: 1rem;
 }
 
-.nav_3 {
+.nav-3 {
   right: 0;
   justify-content: space-between;
   align-items: center;
   display: flex;
   margin-right: 1rem;
-}
-
-.avatar:hover {
-  background-color: #e0e0e0;
 }
 
 .avatar {
@@ -38,11 +34,15 @@ body {
   position: relative;
 }
 
+.avatar:hover {
+  background-color: #e0e0e0;
+}
+
 .leave {
   margin-right: 2rem;
 }
 
-.nav_2 {
+.nav-2 {
   display: flex;
   justify-content: center;
   max-width: 100%;
@@ -50,7 +50,7 @@ body {
 }
 
 .list a {
-  padding: 0.125rem 1.5rem 0 1.5rem;
+  padding: 0.125rem 1.5rem 0;
   text-decoration: none;
   align-items: center;
   display: flex;
@@ -58,7 +58,7 @@ body {
   height: 4rem;
 }
 
-.nav_2 .list a:hover {
+.nav-2 .list a:hover {
   background-color: #e0e0e0;
 }
 

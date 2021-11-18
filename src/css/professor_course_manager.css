@@ -7,7 +7,7 @@ body {
 .main {
   margin: 0 auto;
   max-width: 47.5rem;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem;
 }
 
 .name {
@@ -55,12 +55,12 @@ body {
   padding: 0.5rem 1.5rem;
 }
 
-.buttons button {
-  margin-left: 1rem;
-}
-
 button {
   cursor: pointer;
+}
+
+.buttons button {
+  margin-left: 1rem;
 }
 
 .kick {
@@ -95,7 +95,7 @@ button {
   color: white;
 }
 
-.delete_button {
+.delete-button {
   background-color: #dc3645;
   padding: 8px 15px;
   border-radius: 4px;

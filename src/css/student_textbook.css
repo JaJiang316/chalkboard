@@ -9,10 +9,8 @@ body {
   justify-content: center;
 }
 
-.textbook_items {
+.textbook-items {
   border: none;
-  margin: 0.0625rem 1.5625rem 1.5625rem 0.0625rem;
-  width: 18.75rem;
   overflow: hidden;
   position: relative;
   border-radius: 5px;
@@ -29,21 +27,16 @@ body {
   border-radius: 0.5rem;
   overflow-wrap: break-word;
   text-align: start;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem;
 }
 
 .item span {
-  font-size: 0.8125rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1.25rem;
 }
 
 .link {
   margin-top: 1rem;
   display: block;
-}
-
-.item span {
-  font-size: 1.5rem;
-  font-weight: 500;
 }
