@@ -50,6 +50,10 @@ body {
   font-size: 1rem;
   float: left;
 }
+.signup:hover {
+  background-color: #478ae2;
+  color: white;
+}
 
 .loginbtn {
   border: none;
@@ -61,6 +65,10 @@ body {
   border-radius: 0.312rem;
   font-size: 1rem;
   float: right;
+}
+.loginbtn:hover {
+  background-color: #478ae2;
+  color: white;
 }
 
 .prof {
