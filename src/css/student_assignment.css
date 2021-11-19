@@ -4,12 +4,12 @@ body {
   font-family: sans-serif;
 }
 
-.lectures {
+.assignments {
   text-align: center;
   justify-content: center;
 }
 
-.lecture-items {
+.assignment-items {
   border: none;
   overflow: hidden;
   position: relative;
@@ -28,17 +28,19 @@ body {
   overflow-wrap: break-word;
   text-align: start;
   padding: 1.5rem;
+  cursor: pointer;
+}
+
+.assignement {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .item span {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 0.8125rem;
+  font-weight: 400;
   line-height: 1.25rem;
-}
-
-.task {
-  margin-top: 1rem;
-  display: block;
 }
 
 .name {
@@ -51,4 +53,9 @@ body {
 
 .item:hover {
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 40%);
+}
+
+.work {
+  text-decoration: none;
+  color: black;
 }
