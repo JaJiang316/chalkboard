@@ -62,7 +62,6 @@ body {
 .enter {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
 }
 
 .assignment-page {
