@@ -61,3 +61,14 @@ body {
 .nav-2 .list a:hover {
   background-color: #e0e0e0;
 }
+
+.leave a button {
+  border: 1px solid #dadce0;
+  color: #3c4043;
+  background-color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  border-radius: 0.312rem;
+  font-size: 1rem;
+  float: left;
+}
