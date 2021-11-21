@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="src/css/student_course_nav.css" rel="stylesheet">
+    <link href="src/css/professor_student_work.css" rel="stylesheet">
+    <title>Chalkboard</title>
+</head>
+
+<body>
+    <header>
+        <!-- <button class="back">Back</button> -->
+    </header>
+    <div class="works">
+        <div class="name">
+            <h1>Jason Assignment 1</h1>
+        </div>
+        <div class="work-items">
+            <button class="answer-key">Answer key</button>
+            <form>
+                <div class="item">
+                    <div class="questions">
+                        <p>1. When is this assignment due?</p>
+                        <p class="stud-ans">Answer: Soon</p>
+                        <div class="file">
+                            <a>File1</a>
+                        </div>
+                        <fieldset class=" group1">
+                            <input type="radio" class="satisfactory" name="group1" value="Satifactory">Satifactory
+                            <input type="radio" class="incomplete" name="group1" value="Incomplete">Incomplete
+                            <input type="radio" class="incorrect" name="group1" value="Incorrect">Incorrect
+                        </fieldset>
+                    </div>
+                    <div class="questions">
+                        <p>2. Will I pass this class?</p>
+                        <p class="stud-ans">Answer: Maybe</p>
+                        <div class="file">
+                            <a>File2</a>
+                        </div>
+                        <fieldset class="group2">
+                            <input type="radio" class="satisfactory" name="group2" value="Satifactory">Satifactory
+                            <input type="radio" class="incomplete" name="group2" value="Incomplete">Incomplete
+                            <input type="radio" class="incorrect" name="group2" value="Incorrect">Incorrect
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+            <div class="item">
+                <form>
+                    <label for="grade">Grade:</label>
+                    <input name="grade">
+                    <button type="submit" name="action" value="submit" class="grade">Submit</button>
+                </form>
+            </div>
+            <div class="item">
+                <form>
+                    <div class="comments">
+                        <label for="comment">Professor Comments</label>
+                        <textarea name="comment" class="prof-comment"></textarea>
+                    </div>
+                    <div class="enter-post">
+                        <input value="Post" type="submit">
+                    </div>
+                </form>
+                <div class="comment-posted">
+                    <p class="prof-name">Professor 1</p>
+                    <p class=prof-comment-posted>Question 2 is wrong</p>
+                </div>
+            </div>
+            <!-- Move inside form later on -->
+            <div class="buttons">
+                <a href="professor_assigned.html">
+                    <button type="submit" name="action" value="leave">Leave</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
