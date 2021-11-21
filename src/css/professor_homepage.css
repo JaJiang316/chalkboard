@@ -113,6 +113,29 @@ body {
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 40%);
 }
 
+.no-list-class {
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  border: none;
+  margin: 0.0625rem 1.5625rem 1.5625rem 0.0625rem;
+  width: 18.75rem;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.no-title {
+  background-color: #687692;
+  padding: 1rem 1rem 0.75rem;
+}
+
+.no-title a {
+  color: white;
+  text-decoration: none;
+}
+
 .title {
   background-color: #d91a60;
   padding: 1rem 1rem 0.75rem;
