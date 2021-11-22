@@ -37,8 +37,9 @@ Jason Jiang
 -During this assignment I complete the HTML for the login, signup, professor and student side of the website. I tried to make the html structure as correct as possible. I had to take the submit button out of the forms tag as I needed to wrap the buttons with a anchor to link to other parts of the website.
 
 # D2 CSS:
+David Guzman
 
-Completed the CSS for the website. Keeping the orginal format of the the HTML we constructed, CSS was added to make the website more appealing to the user.
+- Completed the CSS for the website. Keeping the orginal format of the the HTML we constructed, CSS was added to make the website more appealing to the user. As we progressed through the creation of the website, we added more pages to meet the design idea we had for the website.
 
 Jason Jiang
 
