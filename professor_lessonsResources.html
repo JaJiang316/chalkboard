@@ -5,6 +5,8 @@
     <title>Chalkboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="src/css/professor_course_nav.css">
+    <link rel="stylesheet" href="src/css/professor_lessonManager.css">
+
 </head>
 <body>
     <header>
@@ -46,22 +48,36 @@
             </div>
         </nav>
     </header>
-<p>Lessons Manager</p>
-
-<a href="professor_lessonsResources.html">
-    <button>Add Lesson Resource</button>
-</a>
-
-<a href="professor_lessonsResources.html">
-    <button>Remove Lesson Resource</button>
-</a>
-
-<br>
-<br>
-
-<a href="professor_lessons.html">
-    <button>Cancel</button>
-</a>
-
+    <div class="lesson">
+        <div class="title">
+            <h1>Resource Manager</h1>
+        </div>
+        <div class="lesson-items">
+            <form>
+                <div class="lesson-post">
+                    <div class="enter">
+                        <label for="assignment-title">Resource Title</label>
+                        <input placeholder="Enter Assignment title" class="lesson-title" name="lesson-title" type="text">
+                        <label for="assignment">Resource Notes</label>
+                        <textarea placeholder="Enter Resource Notes" class="lesson-page" name="lesson" type="text"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <div class = "add-buttons">
+                            <div class="add-answer">
+                                <label for="answer-sheet">Resource Materal: </label>
+                                <input value="Add lesson Materal" name="lesson-sheet" type="file"></input>
+                            </div>
+                        </div>
+                        <div class="enter-post">
+                            <input value="Post" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class = resource-delete>
+              <button class="delete" for="lesson">Delete Resource</button>
+          </div>
+        </div>
+    </div>
 </body>
 </html>
