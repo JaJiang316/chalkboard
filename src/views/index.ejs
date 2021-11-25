@@ -8,20 +8,20 @@
 
 <body>
     <div class ="main">
-        <form class = "form-cont">
+        <form class = "form-cont" name="loginForm" action="/login_stu" method="post">
             <div class="container">
                 <h1 class = "chalkboard"><a href="index.html">Chalkboard</a></h1>
                 <p> Student Login</p>
                 <p> <%= valid %> </p>
                 <div class = "input-box">
                     <label></label>
-                    <input type="text" placeholder="Username" name="username" required>
+                    <input type="text" placeholder="Email" name="email" required>
                 </div>
                 <div class = "input-box">
                     <label></label>
                     <input type="password" placeholder="Password" name="password" required>
                 </div>
-                <button type="submit" class="loginbtn" onclick="location.href='/student_homepage'">Login</button>
+                <button type="submit" class="loginbtn">Login</button>
             </div>
         </form>
         <button type="submit" class="signup" onclick="location.href='/sign_up'">Sign Up</button>

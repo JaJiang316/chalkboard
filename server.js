@@ -3,7 +3,8 @@ var path = require('path');
 const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
-
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -27,6 +28,15 @@ client.connect(err => {
     }
     // perform actions on the collection object
 });
+
+app.use(
+  session({
+    secret: 'totally a secret',
+    resave: true,
+    saveUninitialized: false,
+    store: MongoStore.create({mongoUrl: 'mongodb+srv://Jason:Totojiang@cluster0.yukz6.mongodb.net/chalkboard?retryWrites=true&w=majority'})
+  })
+);
 
 mongoose.connect('mongodb+srv://Jason:Totojiang@cluster0.yukz6.mongodb.net/chalkboard?retryWrites=true&w=majority', {
   useNewUrlParser: true,
@@ -119,7 +129,7 @@ userSchema = new Schema({
   },
   userType: {
     type: String,
-    require: true
+    require: true,
   },
   password: {
     type: String,
@@ -134,6 +144,36 @@ userSchema = new Schema({
 });
 
 User = mongoose.model('User', userSchema);
+
+// classSchema = new Schema({
+//     courseName: {
+//         type: String,
+//         required: true,
+//     },
+//     courseId: {
+//         type: String,
+//         required: true,
+//     },
+//     instructors: {
+//         type: [String],
+//         required: true,
+//     },
+//     description: {
+//         type: String
+//     },
+//     students: {
+//         type: [String]
+//     },
+//     assignments: [
+//         {
+//             title: String,
+//             dueDate: Date,
+
+//         }
+//     ]
+// });
+
+// Course = mongoose.model('Courses', classSchema);
 
 app.use(function(req, res, next) {
     if (!req.user)
@@ -187,3 +227,37 @@ app.post('/sign_up', function (req, res, next) {
     }
   }
 });
+
+app.post('/login_stu', function (req, res, next) {
+  User.findOne({ email: req.body.email }, function (err, user) {
+    if (!user) {
+      return res.render("index", { valid: "User does not exist" });
+    }
+    else if(req.body.password === user.password && user.userType == "student") {
+      req.session.userId = user.unique_id;
+      return res.render("student_homepage");
+      // getEnrolledCourses(user, 'student_homepage', res);
+    }
+    else {
+      return res.render("index", { valid: "Incorrect email or password" });
+    }
+  });
+});
+
+function getEnrolledCourses(user, goto, res) {
+        // get user enrolled classes
+        // var user_classes = user.courses;
+        // var class_details = [];
+        // var returnObj;
+
+        // // create query to link userClasses with courses model to get class info
+        // user_classes.forEach(course => {
+        //   class_details.push(course);
+        // });
+
+        // db.collection('courses').find({courseId: {"$in":class_details}}).toArray(function (err, result) {
+        //     returnObj = result;
+        //     var gotoUrl = "/view/" + goto +"";
+        //     return res.render(__dirname + gotoUrl, {print:result});
+        // });
+}
