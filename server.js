@@ -2,12 +2,15 @@ const express = require('express');
 var path = require('path');
 const app = express();
 
-var ejs = require('ejs');
-const PORT = process.env.PORT || 3000;
+const dotenv = require('dotenv');
+dotenv.config();
 
-const { MongoClient } = require('mongodb');
+var ejs = require('ejs');
+const PORT = process.env.PORT;
 const user = process.env.DB_USER;
 const pass = process.env.DB_PASS;
+
+const { MongoClient } = require('mongodb');
 
 const uri = `mongodb+srv://${user}:${pass}@cluster0.yukz6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
