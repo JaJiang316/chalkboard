@@ -25,12 +25,12 @@
                 <input type="text" placeholder="Email" name="email" required>
             </div>
             <div class="input-box">
-                <label for="psw"></label>
-                <input type="password" placeholder="Password" name="psw" required>
+                <label for="password"></label>
+                <input type="password" placeholder="Password" name="password" required>
             </div>
             <div class="input-box">
-                <label for="psw-repeat"></label>
-                <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+                <label for="confirmPassword"></label>
+                <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
             </div>
             <div class="checkbox">
                 <input id="student" name="userType" value="student" type="radio">
@@ -40,6 +40,7 @@
                 <input id="admin" name="userType" value="admin" type="radio">
                 <label for="admin">Admin</label>
             </div>
+            <p class="error"> <%= valid %> </p>
             <button type="submit" class="signupbtn">Sign Up</button>
         </form>
         <button type="button" class="cancelbtn" onclick="location.href='/'">Cancel</button>
