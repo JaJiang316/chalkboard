@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="css/student_add_course.css">
+</head>
+
+<body>
+    <div class="main">
+        <form class="form-cont">
+            <div class="container">
+                <h1 class="chalkboard"><a onclick="location.href='student_homepage'">Chalkboard Student</a></h1>
+                <p> Add Course</p>
+                <div class="input-box">
+                    <label></label>
+                    <input type="text" placeholder="Enter Code" name="code" required>
+                </div>
+            </div>
+            <button type="submit" class="add" onclick="location.href='student_homepage'">Add</button>
+        </form>
+        <!-- have to move the anchor links into form in the future -->
+        <a onclick="location.href='student_homepage'">
+            <button type="submit" class="cancel">Cancel</button>
+        </a>
+    </div>
+</body>
+
+</html>

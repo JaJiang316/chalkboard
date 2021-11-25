@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Chalkboard</title>
-    <link rel="stylesheet" href="/css/student_homepage.css">
+    <link rel="stylesheet" href="css/professor_homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-    <nav class="student-nav">
+    <nav class="prof-nav">
         <div class="nav-1">
-            <h1 class="chalkboard">Chalkboard Student</h1>
+            <h1 class="chalkboard">Chalkboard Professor</h1>
         </div>
         <div class="nav-2">
             <div class="search">
                 <form>
-                    <input type="text" placeholder="Search.." name="search" class="search-item">
+                    <input type="text" placeholder="Search.." name="search">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <div class="add">
-                <a onclick="location.href='/student_add_course'">
+                <a href="professor_addClass.html">
                     <img class="plus" src="img/plus.svg">
                 </a>
             </div>
             <div class="imgcontainer">
-                <img src="img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+                <a>
+                    <img src="img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+                </a>
             </div>
             <div class="leave">
                 <a href="/">
@@ -41,7 +41,7 @@
     <ul style="list-style-type:none" class="class-nav">
         <li class="list-class">
             <div class="title">
-                <a onclick="location.href='/student_course'">
+                <a href="professor_coursePage.html">
                     <div class="class">Class 101</div>
                     <div class="prof">Professor1</div>
                 </a>
@@ -52,7 +52,7 @@
         </li>
         <li class="list-class">
             <div class="title">
-                <a onclick="location.href='/student_course'">
+                <a href="professor_coursePage.html">
                     <div class="class">Class 202</div>
                     <div class="prof">Professor2</div>
                 </a>
@@ -63,7 +63,7 @@
         </li>
         <li class="list-class">
             <div class="title">
-                <a onclick="location.href='/student_course'">
+                <a href="professor_coursePage.html">
                     <div class="class">Class 303</div>
                     <div class="prof">Professor3</div>
                 </a>
@@ -83,5 +83,4 @@
         </li>
     </ul>
 </body>
-
 </html>
