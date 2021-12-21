@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Chalkboard</title>
-    <link rel="stylesheet" href="css/student_add_course.css">
+    <link rel="stylesheet" href="/css/professor_add_course.css">
 </head>
 
 <body>
@@ -18,16 +18,29 @@
                 <p> Create Course</p>
                 <div class="input-box">
                     <label></label>
-                    <input type="text" placeholder="Enter Title" name="title" required>
+                    <input type="text" placeholder="Enter Title" name="title">
                 </div>
                 <div class="input-box">
                     <label></label>
-                    <input type="text" placeholder="Enter Description" name="desc" required>
+                    <input type="text" placeholder="Enter Description" name="desc">
                 </div>
             </div>
             <button type="submit" class="add">Add</button>
         </form>
-        <!-- have to move the anchor links into form in the future -->
+        <br>
+        <form class="join" action="/join_class" method="post">
+            <div class="container">
+                <p class="error">
+                    <%= coursevalid %>
+                </p>
+                <p> Join Course</p>
+                <div class="input-box">
+                    <label></label>
+                    <input type="text" placeholder="Enter Code" name="code">
+                </div>
+            </div>
+            <button type="submit" class="add">Join</button>
+        </form>
         <form name="back" method="post" action="/back_professor">
             <button type="submit" class="cancel">Cancel</button>
         </form>

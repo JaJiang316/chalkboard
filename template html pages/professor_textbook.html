@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/css/professor_course_nav.css">  
+    <link rel="stylesheet" href="src/css/professor_textbook.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="prof-nav">
+                <div class="nav-1">
+                    <h1 class="chalkboard">Chalkboard Professor</h1>
+                </div>
+                <div class="nav-2">
+                    <div class="list">
+                        <a href="professor_coursePage.html">Recent</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_assignment.html">Assignment</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_textbook.html">TextBook</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_video.html">Video</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_lessons.html">Lessons</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_courseManger.html">Course Manager</a>
+                    </div>
+                </div>
+                <div class="nav-3">
+                    <div class="leave">
+                        <a href="professor_homePage.html">
+                            <button>Leave</button>
+                        </a>
+                    </div>
+                    <div class="imgcontainer">
+                        <img src="src/img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="textbook">
+    <div class="title">
+        <h1>Textbook Manager</h1>
+    </div>
+    <div class="textbook-items">
+        <form>
+            <div class="textbook-post">
+                <div class="enter">
+                    <label for="textbook-title"></label>
+                    <input placeholder="Enter Textbook" class="textbook-title" name="textbook-title" type="text">
+                    <label for="textbooks"></label>
+                    <textarea placeholder="Enter Textbook pages" class="textbook-page" name="textbooks" type="text"></textarea>
+                </div>
+                <div class="enter-post">
+                    <input value="Post" type="submit">
+                </div>
+            </div>
+        </form>
+        <div class="item">
+            <div class="text">
+                Textbook1
+            </div>
+            <span>
+                Read pg 1 Chapter 1
+            </span>
+            <div class="button">
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="text">
+                Textbook2
+            </div>
+            <span>
+                Read pg 32 Chapter 3.
+            </span>
+            <div class="button">
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

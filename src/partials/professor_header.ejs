@@ -6,10 +6,10 @@
             </div>
             <div class="nav-2">
                 <div class="list">
-                    <a onclick="location.href='professor_coursePage'">Recent</a>
+                    <a href="/course/<%- courseid %>">Recent</a>
                 </div>
                 <div class="list">
-                    <a onclick="location.href='professor_assignment'">Assignment</a>
+                    <a href="/course/<%- courseid %>/assignments">Assignment</a>
                 </div>
                 <!-- <div class="list">
                     <a onclick="location.href='professor_textbook'">TextBook</a>
@@ -21,7 +21,7 @@
                     <a onclick="location.href='professor_lessons'">Lessons</a>
                 </div> -->
                 <div class="list">
-                    <a onclick="location.href='professor_courseManager'">Course Manager</a>
+                    <a href="/course/<%- courseid %>/coursemanager">Course Manager</a>
                 </div>
             </div>
             <div class="nav-3">
@@ -31,7 +31,7 @@
                     </form>
                 </div>
                 <div class="imgcontainer">
-                    <img src="img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+                    <img src="/img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
                 </div>
             </div>
         </div>

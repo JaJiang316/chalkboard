@@ -45,7 +45,7 @@
         <% if(print !=null) { print.forEach(function(course) { %>
             <li class="list-class">
                 <div class="title">
-                    <a onclick="location.href='professor_coursePage'">
+                    <a href="/course/<%- course.courseId %>">
                         <div class="class">
                             <%= course.courseName %>
                         </div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="src/css/student_course_nav.css" rel="stylesheet">
+    <link href="src/css/student_work.css" rel="stylesheet">
+    <title>Chalkboard</title>
+</head>
+
+<body>
+    <header>
+        <!-- <button class="back">Back</button> -->
+    </header>
+    <div class="works">
+        <div class="name">
+            <h1>Assignment 1</h1>
+        </div>
+        <div class="work-items">
+            <form>
+                <div class="item">
+                    <div class="questions">
+                        <label for="answer1">1. When is this assignment due?</label>
+                        <textarea name="answer1" class="question" placeholder="Enter your answer here"></textarea>
+                        <label for="filename"></label>
+                        <input type="file" class="my-file" name="filename">
+                    </div>
+                    <div class="questions">
+                        <label for="answer2">2. Will I pass this class?</label>
+                        <textarea name="answer2" class="question" placeholder="Enter your answer here"></textarea>
+                        <label for="filename"></label>
+                        <input type="file" class="my-file" name="filename">
+                    </div>
+                </div>
+            </form>
+            <!-- Move inside form later on -->
+            <div class="buttons">
+                <a href="student_assignment.html">
+                    <button type="submit" name="action" value="save">Save Work</button>
+                </a>
+                <a href="student_assignment.html">
+                    <button type="submit" name="action" value="submit">Submit</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

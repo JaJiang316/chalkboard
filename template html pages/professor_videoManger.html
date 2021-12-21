@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/css/professor_course_nav.css" />
+    <link rel="stylesheet" href="src/css/professor_videoManager.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="prof-nav">
+          <div class="nav-1">
+            <h1 class="chalkboard">Chalkboard Professor</h1>
+          </div>
+          <div class="nav-2">
+            <div class="list">
+              <a href="professor_coursePage.html">Recent</a>
+            </div>
+            <div class="list">
+              <a href="professor_assignment.html">Assignment</a>
+            </div>
+            <div class="list">
+              <a href="professor_textbook.html">TextBook</a>
+            </div>
+            <div class="list">
+              <a href="professor_video.html">Video</a>
+            </div>
+            <div class="list">
+              <a href="professor_lessons.html">Lessons</a>
+            </div>
+            <div class="list">
+              <a href="professor_courseManger.html">Course Manager</a>
+            </div>
+          </div>
+          <div class="nav-3">
+            <div class="leave">
+              <a href="professor_homePage.html">
+                <button>Leave</button>
+              </a>
+            </div>
+            <div class="imgcontainer">
+              <img
+                src="src/img/person-svgrepo-com.svg"
+                alt="Avatar"
+                class="avatar"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="video">
+        <div class="title">
+            <h1>Video Manager</h1>
+        </div>
+        <div class="video-items">
+            <form>
+                <div class="video-post">
+                    <div class="enter">
+                        <label for="video-title">Video Title</label>
+                        <input placeholder="Enter Assignment title" class="video-title" name="video-title" type="text">
+                        <lavel for="due-date">Due Date</lavel>
+                        <input type="date" name="due-date" class="due-date">
+                        <label for="video">Notes</label>
+                        <textarea placeholder="Enter Video notes or Video Link" class="video-page" name="video" type="text"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <div class = "add-buttons">
+                            <div class="add-answer">
+                                <label for="video-add">Video Add: </label>
+                                <input value="Add Video" name="video-add" type="file"></input>
+                            </div>
+                        </div>
+                        <div class="enter-post">
+                            <input value="Post" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </body>
+</html>

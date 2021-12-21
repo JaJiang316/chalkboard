@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/css/professor_course_nav.css">
+    <link rel="stylesheet" href="src/css/professor_assignment.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="prof-nav">
+                <div class="nav-1">
+                    <h1 class="chalkboard">Chalkboard Professor</h1>
+                </div>
+                <div class="nav-2">
+                    <div class="list">
+                        <a href="professor_coursePage.html">Recent</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_assignment.html">Assignment</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_textbook.html">TextBook</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_video.html">Video</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_lessons.html">Lessons</a>
+                    </div>
+                    <div class="list">
+                        <a href="professor_courseManger.html">Course Manager</a>
+                    </div>
+                </div>
+                <div class="nav-3">
+                    <div class="leave">
+                        <a href="professor_homePage.html">
+                            <button>Leave</button>
+                        </a>
+                    </div>
+                    <div class="imgcontainer">
+                        <img src="src/img/person-svgrepo-com.svg" alt="Avatar" class="avatar">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="assignments">
+        <div class="title">
+            <h1>Assignment Manager</h1>
+        </div>
+        <div class="assignment-items">
+            <form>
+                <div class="assignment-post">
+                    <div class="enter">
+                        <label for="assignment-title">Title</label>
+                        <input placeholder="Enter Assignment title" class="assignment-title" name="assignment-title" type="text">
+                        <lavel for="due-date">Due Date</lavel>
+                        <input type="date" name="due-date" class="due-date">
+                        <label for="assignment">Instructions</label>
+                        <textarea placeholder="Enter Assignment instructions" class="assignment-page" name="assignment" type="text"></textarea>
+                    </div>
+                    <div class = questions>
+                        <h1>Questions</h1>
+                        <button class="delete" for="question1">Delete</button>
+                        <label for="question1">Question 1</label>
+                        <textarea placeholder="Add Question" class="question-page" name="question1" type="text"></textarea>
+                        <button class="delete" for="question2">Delete</button>
+                        <label for="question2">Question 2</label>
+                        <textarea placeholder="Add Question" class="question-page" name="question2" type="text"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <div class = "add-buttons">
+                            <div class="add-answer">
+                                <label for="answer-sheet">Answersheet: </label>
+                                <input value="Add Answersheet" name="answer-sheet" type="file"></input>
+                            </div>
+                            <div class="add-question">
+                                <input value="Add Question" type="submit"></input>
+                            </div>
+                        </div>
+                        <div class="enter-post">
+                            <input value="Post" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <a href = "professor_assigned.html">
+                <div class="item">
+                    <div class="text">
+                        Assignment 1
+                        <span class = "due">Due date: N/A</span>
+                    </div>
+                    
+                    <span>
+                        Complete this assignment
+                    </span>
+                </div>
+            </a>
+            <a href="professor_assigned.html">
+                <div class="item">
+                    <div class="text">
+                        Assignment 2
+                        <span class="due">Due date: 11/25/2021</span>
+                    </div>
+                    <span>
+                        Complete this assignment
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

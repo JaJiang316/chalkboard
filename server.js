@@ -253,7 +253,7 @@ app.get('/professor_addClass', (req, res) => {
     sess=req.session;
     if(sess.userId){
       if(sess.user == "professor"){
-        res.render('professor_addClass', { valid: "" });
+        res.render('professor_addClass', { valid: "", coursevalid: "" });
       }
       else{
         res.redirect('error');
@@ -618,6 +618,9 @@ courseSchema = new Schema({
     ],
     assignments: [
       { //1 assignment
+        id: {
+          type: Number
+        },
         title: {
           type: String
         },
@@ -644,6 +647,9 @@ courseSchema = new Schema({
     ],
     turned_in_assignments: [
       {
+        id: {
+          type: Number
+        },
         name: {
           type: String,
           required: true
@@ -668,6 +674,9 @@ courseSchema = new Schema({
         ],
         assignment_question: [
           {
+            id: {
+              type: Number
+            },
             question: {
               type: String
             },
@@ -826,7 +835,7 @@ app.post("/prof_adding_class", function(req, res) {
     !req.body.title ||
     !req.body.desc 
   ) {
-    return res.render("prof_adding_class", { valid: "Fill all the required fields!" });
+    return res.render("professor_addClass", { valid: "Fill all the required fields!", coursevalid: "" });
   }else{
     let name = '';
     User.findOne({unique_id: sess.userId}, function (err, user){
@@ -944,7 +953,6 @@ app.post("/student_add_course", function(req, res){
       })
       if(data){
         let name = '';
-        console.log("Hello")
         User.findOne({unique_id: sess.userId}, function (err, user){
           if(!user){
             console.log(err);
@@ -1097,7 +1105,165 @@ app.post("/back_admin", function (req, res, next) {
   // });
 });
 
-app.get('/course/:id', async function (req, res) {
-  // let id = 
-  return res.render("professor_addClass")
+app.get('/course/:id', function (req, res) {
+  sess = req.session;
+  let id = req.params.id
+  if(sess.user == "professor"){
+    Course.find({courseId: id}, function (err, course){
+      let items = []
+      course.forEach(assignment => {
+        if(assignment.assignments.length != 0){
+          let newitem = {
+            title: assignment.title,
+            duedate: assignment.duedate,
+            instruction: assignment.instruction
+          }
+          items.push(newitem)
+        }
+      })
+      // console.log(items);
+      return res.render("professor_coursePage", {assignment: items, courseid: id});
+    })
+  }
+  else if(sess.user == "student"){
+    Course.find({courseId: id}, function (err, course){
+      let items = []
+      course.forEach(assignment => {
+        if(assignment.assignments.length != 0){
+          let newitem = {
+            title: assignment.title,
+            duedate: assignment.duedate,
+            instruction: assignment.instruction
+          }
+          items.push(newitem)
+        }
+      })
+      // console.log(items);
+      return res.render("student_course", {assignment: items, courseid: id});
+    })
+  }
+})
+
+app.get('/course/:id/assignments', function (req, res) {
+  sess = req.session;
+  let userid = sess.userId
+  let id = req.params.id
+  if(sess.user == "professor"){
+    Course.find({courseId: id}, function (err, course){
+        let items = []
+        // console.log(course);
+        course.forEach(assignment => {
+          if(assignment.assignments.length != 0){
+            items.push(assignment)
+          }
+        })
+        // console.log(items);
+        return res.render("professor_assignment", {assignment: items, courseid: id});
+      })
+  }
+  else if(sess.user == "student"){
+    Course.find({courseId: id}, function (err, course){
+      let items = []
+      // console.log(course);
+      course.forEach(assignment => {
+        if(assignment.assignments.length != 0){
+          items.push(assignment)
+        }
+      })
+      // console.log(items);
+      return res.render("student_assignment", {assignment: items, courseid: id, user: userid});
+    })
+  }
+})
+
+app.get('/course/:id/:userid/:assignmentid', function (req, res) {
+
+})
+
+app.get('/course/:id/coursemanager', function (req, res) {
+  sess = req.session;
+  let userid = sess.userId
+  let id = req.params.id
+  Course.findOne({courseId: id}, function (err, course){
+    // console.log(course)
+    let requesting = course.requesting;
+    let reqstudents = [];
+    let reqprofessors = [];
+    let students = [];
+    let professors = [];
+    requesting.forEach(request => {
+      if(request.userType == "student"){
+        reqstudents.push(request);
+      }
+      else if(request.userType == "professor"){
+        reqprofessors.push(request);
+      }
+    })
+    course.instructors.forEach(teach => {
+      professors.push(teach);
+    })
+    course.students.forEach(student => {
+      students.push(student);
+    })
+    return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: id});
+  });
+})
+
+app.post('/join_class', function (req, res) {
+  sess = req.session;
+  // console.log(sess);
+  if(!req.body.code){
+    return res.render("professor_addClass", { valid: "", coursevalid: "Fill all the required fields!" });
+  }else{
+    let code = req.body.code;
+    // console.log(code);
+    let name;
+    User.findOne({unique_id: sess.userId}, function (err, user){
+      if(!user){
+        console.log(err);
+      }else{
+        name = `${user.first} ${user.last}`;
+        // console.log(name)
+        Course.findOne({courseId: code}, function(err, course){
+          if(!course){
+            return res.render("professor_addClass", { valid: "", coursevalid: "Invalid Course Code or Course does not exist" });
+          }
+          // console.log(course)
+          course.instructors.forEach(instructor => {
+            if(instructor.id === sess.userId){
+              return res.render("professor_addClass", { valid: "", coursevalid: "You are already registered for that course" });
+            }
+          })
+          course.requesting.forEach(requesting => {
+            // console.log(requesting)
+            if(requesting.id === sess.userId){
+              return res.render("professor_addClass", { valid: "", coursevalid: "You are already requesting for that course" });
+            }
+          })
+          if (course) {
+            let newuser = {
+              name: name,
+              id: sess.userId,
+              userType: sess.user
+            }
+            course.requesting.push(newuser);
+            course.save((err, updatedcourse) => {
+              if(err) {
+                return console.log(err);
+              }
+            })
+            getEnrolledCourses(user, 'professor_homepage', res);
+          }
+        })
+      }
+    });
+  }
+
+})
+
+app.post('/delete_course', function (req, res) {
+  let sess = req.session;
+  let id = req.query.id;
+  console.log(id)
+  console.log(sess)
 })

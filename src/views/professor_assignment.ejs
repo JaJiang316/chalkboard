@@ -14,7 +14,7 @@
             <h1>Assignment Manager</h1>
         </div>
         <div class="assignment-items">
-            <form>
+            <form method="post" action="/add_assignment">
                 <div class="assignment-post">
                     <div class="enter">
                         <label for="assignment-title">Title</label>
@@ -51,29 +51,19 @@
                     </div>
                 </div>
             </form>
-            <a onclick="location.href='professor_assigned'" class = "assignment">
-                <div class="item">
-                    <div class="text">
-                        Assignment 1
-                        <span class = "due">Due date: N/A</span>
+            <% if(assignment !=null) { assignment.forEach(function(assignment) { %>
+                <a href="/course/<%- courseid %>/ <%- assignmentid %>" class="work">
+                    <div class="item">
+                        <div class="text">
+                            <%= assignment.title %>
+                            <span class="due">Due date: <%= assignment.duedate %></span>
+                        </div>
+                        <span>
+                            <%= assignment.description %>
+                        </span>
                     </div>
-                    
-                    <span>
-                        Complete this assignment
-                    </span>
-                </div>
-            </a>
-            <a onclick="location.href='professor_assigned'" class = "assignment">
-                <div class="item">
-                    <div class="text">
-                        Assignment 2
-                        <span class="due">Due date: 11/25/2021</span>
-                    </div>
-                    <span>
-                        Complete this assignment
-                    </span>
-                </div>
-            </a>
+                </a>
+            <% }) } %>
         </div>
     </div>
 

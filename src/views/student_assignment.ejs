@@ -3,39 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="css/student_course_nav.css" rel="stylesheet">
-    <link href="css/student_assignment.css" rel="stylesheet">
+    <link href="/css/student_course_nav.css" rel="stylesheet">
+    <link href="/css/student_assignment.css" rel="stylesheet">
     <title>Chalkboard</title>
 </head>
 
 <body>
-    <%- include('../partials/student_header') %>
+    <%- include('../partials/student_header', {courseid}) %>
     <div class="assignments">
         <div class="name">
             <h1>Assignments</h1>
         </div>
         <div class="assignment-items">
-            <a onclick="location.href='/student_work'" class="work">
-                <div class="item">
-                    <div class="assignement">
-                        Assignment 1
+            <% if(assignment !=null) { assignment.forEach(function(assignment) { %>
+                <a href="/course/<%- courseid %>/ <%- user %>" class="work">
+                    <div class="item">
+                        <div class="assignement">
+                            <%= assignment.title %>
+                        </div>
+                        <div class="assignement">
+                            Due Date: <%= assignment.duedate %>
+                        </div>
+                        <span>
+                            <%= assignment.description %>
+                        </span>
                     </div>
-                    <span>
-                        Hello
-                    </span>
-                </div>
-            </a>
-            <a onclick="location.href='/student_work'" class="work">
-                <div class="item">
-                    <div class="assignement">
-                        Assignment 2
-                    </div>
-                    <span>
-                        HeHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello
-                        HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello
-                    </span>
-                </div>
-            </a>
+                </a>
+            <% }) } %>
         </div>
     </div>
 </body>

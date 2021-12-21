@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="/css/admin_adminProfStuInfo.css" />
   </head>
   <body>
-    <%- include('../partials/professor_header') %>
+    <%- include('../partials/professor_header', {courseid}) %>
     <div class="info">
       <div class="title">
         <h1>Upcoming Assignment Due</h1>
       </div>
       <div class="info_items">
-        <div class="item">
-          <div class="text">Courses Feed</div>
-          <span> Information for Professors about courses </span>
-        </div>
+        <% if(assignment !=null) { assignment.forEach(function(assignment) { %>
+          <div class="item">
+            <div class="text">
+              <%= assignment.title %>
+            </div>
+            <div class="text">Due Date: <%= assignment.duedate %>
+            </div>
+            <span>
+              <%= assignment.description %>
+            </span>
+          </div>
+          <% }) } %>
       </div>
     </div>
   </body>

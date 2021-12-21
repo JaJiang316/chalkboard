@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/css/professor_course_manager.css">
 </head>
 <body>
-  <%- include('../partials/professor_header') %>
+  <%- include('../partials/professor_header', {courseid}) %>
   <div class = "title">
     <h1>Course Manager</h1>
   </div>
@@ -22,19 +22,53 @@
         <h2>Requesting</h2>
       </div>
       <table class="table">
-        <tr class="row">
-          <td class="data">
-            <div class = "person">
-              <span>Professor3</span>
-            </div>
-          </td>
-          <td class="course-buttons">
-            <div class="buttons">
-              <button class = "accept">Accept</button>
-              <button class = "deny">Deny</button>
-            </div>
-          </td>
-        </tr>
+        <form>
+          <% if(reqprofessors !=null ) { reqprofessors.forEach(function(professor) { %>
+            <tr class="row">
+              <td class="data">
+                <div class="person">
+                  <span><%= professor.name %></span>
+                </div>
+              </td>
+              <td class="course-buttons">
+                <div class="buttons">
+                  <button class="accept">Accept</button>
+                  <button class="deny">Deny</button>
+                </div>
+              </td>
+            </tr>
+          <% }) } %>
+          <tr class="row">
+            <td class="data">
+              <div class="person">
+                <span>Professor3</span>
+              </div>
+            </td>
+            <td class="course-buttons">
+              <div class="buttons">
+                <button class="accept">Accept</button>
+                <button class="deny">Deny</button>
+              </div>
+            </td>
+          </tr>
+        </form>
+        <% if(reqstudents !=null ) { reqstudents.forEach(function(student) { %>
+          <tr class="row">
+            <td class="data">
+              <div class="person">
+                <span>
+                  <%= student.name %>
+                </span>
+              </div>
+            </td>
+            <td class="course-buttons">
+              <div class="buttons">
+                <button class="accept">Accept</button>
+                <button class="deny">Deny</button>
+              </div>
+            </td>
+          </tr>
+          <% }) } %>
         <tr class="row">
           <td class="data">
             <div class="person">
@@ -55,6 +89,23 @@
         <h2>Professors</h2>
       </div>
       <table class="table">
+        <% if(professors !=null ) { professors.forEach(function(professor) { %>
+          <tr class="row">
+            <td class="data">
+              <div class="person">
+                <span>
+                  <%= professor.name %>
+                </span>
+              </div>
+            </td>
+            <td class="course-buttons">
+              <div class="buttons">
+                <button class="promote">Promote</button>
+                <button class="kick">Kick</button>
+              </div>
+            </td>
+          </tr>
+          <% }) } %>
         <tr class="row">
           <td class="data">
             <div class="person">
@@ -68,19 +119,6 @@
             </div>
           </td>
         </tr>
-        <tr class="row">
-          <td class="data">
-            <div class="person">
-              <span>Professor2</span>
-            </div>
-          </td>
-          <td class="course-buttons">
-            <div class="buttons">
-              <button class="promote">Promote</button>
-              <button class="kick">Kick</button>
-            </div>
-          </td>
-        </tr>
       </table>
     </div>
     <div class="stud">
@@ -88,18 +126,36 @@
         <h2>Students</h2>
       </div>
       <table class="table">
-        <tr class="row">
-          <td class="data">
-            <div class="person">
-              <span>Student1</span>
-            </div>
-          </td>
-          <td class="course-buttons">
-            <div class="buttons">
-              <button class="kick">Kick</button>
-            </div>
-          </td>
-        </tr>
+        <form>
+          <% if(students !=null ) { students.forEach(function(student) { %>
+            <tr class="row">
+              <td class="data">
+                <div class="person">
+                  <span>
+                    <%= student.name %>
+                  </span>
+                </div>
+              </td>
+              <td class="course-buttons">
+                <div class="buttons">
+                  <button class="kick">Kick</button>
+                </div>
+              </td>
+            </tr>
+            <% }) } %>
+          <tr class="row">
+            <td class="data">
+              <div class="person">
+                <span>Student1</span>
+              </div>
+            </td>
+            <td class="course-buttons">
+              <div class="buttons">
+                <button class="kick">Kick</button>
+              </div>
+            </td>
+          </tr>
+        </form>
         <tr class="row">
           <td class="data">
             <div class = "person">
@@ -114,9 +170,12 @@
         </tr>
       </table>
     </div>
-    <div class = "delete">
-      <button class = "delete-button">Delete Course</button>
-    </div>
+    <!-- <form method="post" action="/delete_course">
+      <div class="delete">
+        <input type="id" hidden value=<%= courseid %> >
+        <button class="delete-button">Delete Course</button>
+      </div>
+    </form> -->
   </div>
 </body>
 </html>
