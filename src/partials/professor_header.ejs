@@ -6,29 +6,29 @@
             </div>
             <div class="nav-2">
                 <div class="list">
-                    <a href="professor_coursePage.html">Recent</a>
+                    <a onclick="location.href='professor_coursePage'">Recent</a>
                 </div>
                 <div class="list">
-                    <a href="professor_assignment.html">Assignment</a>
+                    <a onclick="location.href='professor_assignment'">Assignment</a>
+                </div>
+                <!-- <div class="list">
+                    <a onclick="location.href='professor_textbook'">TextBook</a>
                 </div>
                 <div class="list">
-                    <a href="professor_textbook.html">TextBook</a>
+                    <a onclick="location.href='professor_video'">Video</a>
                 </div>
                 <div class="list">
-                    <a href="professor_video.html">Video</a>
-                </div>
+                    <a onclick="location.href='professor_lessons'">Lessons</a>
+                </div> -->
                 <div class="list">
-                    <a href="professor_lessons.html">Lessons</a>
-                </div>
-                <div class="list">
-                    <a href="professor_courseManger.html">Course Manager</a>
+                    <a onclick="location.href='professor_courseManager'">Course Manager</a>
                 </div>
             </div>
             <div class="nav-3">
                 <div class="leave">
-                    <a href="professor_homePage.html">
-                        <button>Leave</button>
-                    </a>
+                    <form name="back" method="post" action="/back_professor">
+                        <button type="submit">Leave</button>
+                    </form>
                 </div>
                 <div class="imgcontainer">
                     <img src="img/person-svgrepo-com.svg" alt="Avatar" class="avatar">

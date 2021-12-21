@@ -71,6 +71,7 @@ body {
 
 .add {
   margin-right: 2rem;
+  cursor: pointer;
 }
 
 .add img {
@@ -144,6 +145,7 @@ body {
 .title a {
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .title a:hover {
@@ -164,6 +166,18 @@ body {
 
 .leave {
   margin-left: 1rem;
+}
+
+.reset {
+  background-color: #e7e7e7; /* Green */
+  border: none;
+  color: black;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1024px) {

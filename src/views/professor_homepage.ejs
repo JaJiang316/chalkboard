@@ -13,13 +13,13 @@
         </div>
         <div class="nav-2">
             <div class="search">
-                <form>
-                    <input type="text" placeholder="Search.." name="search">
+                <form name="searchForm" action="/ProfSearchCourse" method="post">
+                    <input type="text" placeholder="Enter Course Name..." name="search" required>
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <div class="add">
-                <a href="professor_addClass.html">
+                <a onclick="location.href='/professor_addClass'">
                     <img class="plus" src="img/plus.svg">
                 </a>
             </div>
@@ -29,58 +29,55 @@
                 </a>
             </div>
             <div class="leave">
-                <a href="/">
-                    <button>Sign out</button>
-                </a>
+                <form name="signOut" method="post" action="/signOut">
+                    <button type="submit">Sign out</button>
+                </form>
             </div>
         </div>
     </nav>
     <div class="select">
         <p> Select a class</p>
+        <form method="post" action="/back_professor">
+            <button class="reset" type="submit">Reset Filter</button>
+        </form>
     </div>
     <ul style="list-style-type:none" class="class-nav">
-        <li class="list-class">
-            <div class="title">
-                <a href="professor_coursePage.html">
-                    <div class="class">Class 101</div>
-                    <div class="prof">Professor1</div>
-                </a>
-            </div>
-            <div class="desc">
-                This is class 1
-            </div>
-        </li>
-        <li class="list-class">
-            <div class="title">
-                <a href="professor_coursePage.html">
-                    <div class="class">Class 202</div>
-                    <div class="prof">Professor2</div>
-                </a>
-            </div>
-            <div class="desc">
-                This is class 2
-            </div>
-        </li>
-        <li class="list-class">
-            <div class="title">
-                <a href="professor_coursePage.html">
-                    <div class="class">Class 303</div>
-                    <div class="prof">Professor3</div>
-                </a>
-            </div>
-            <div class="desc">
-                This is class 3
-            </div>
-        </li>
-        <li class="no-list-class">
-            <div class="no-title">
-                <div class="class">Class 304</div>
-                <div class="prof">Professor4</div>
-            </div>
-            <div class="desc">
-                This is class 4
-            </div>
-        </li>
+        <% if(print != null) {
+            print.forEach(function(course) { %>
+                <li class="list-class">
+                    <div class="title">
+                        <a href="/course/<%- course.courseId %>">
+                            <div class="class"><%= course.courseName %></div>
+                            <div class="prof"><%= course.instructors[0].name %></div>
+                            <div class="code">Code: <%= course.courseId %></div>
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <%= course.description %>
+                    </div>
+                </li>
+           <% })
+        } %>
+        <% if(notprint != null) { 
+            notprint.forEach(function(course) { %>
+            <li class="list-class">
+                <div class="no-title">
+                    <div class="class">
+                        <%= course.courseName %>
+                    </div>
+                    <div class="prof">
+                        <%= course.instructors[0].name %>
+                    </div>
+                    <div class="code">
+                        Code: <%= course.courseId %>
+                    </div>
+                </div>
+                <div class="desc">
+                    <%= course.description %>
+                </div>
+            </li>
+            <% }) 
+        } %>
     </ul>
 </body>
 </html>

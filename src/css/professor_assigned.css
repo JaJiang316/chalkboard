@@ -105,4 +105,10 @@ button {
   border-radius: 4px;
   border: 0.0625rem solid #e0e0e0;
   color: white;
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  text-align: center;
 }

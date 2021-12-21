@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/professor_course_nav.css" />
+    <link rel="stylesheet" href="/css/professor_video.css" />
+  </head>
+  <body>
+    <%- include('../partials/professor_header') %>
+    <div class="video">
+        <div class="title">
+            <h1>Videos</h1>
+        </div>
+        <div class="video-items">
+            <form>
+                <div class="video-post">
+                    <div class="enter">
+                        <label for="video-title">Video Title</label>
+                        <input placeholder="Enter Video title" class="video-title" name="video-title" type="text">
+                        <label for="video">Notes</label>
+                        <textarea placeholder="Enter Video notes or Video Link" class="video-page" name="video" type="text"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <div class = "add-buttons">
+                            <div class="add-answer">
+                                <label for="video-add">Video Add: </label>
+                                <input value="Add Video" name="video-add" type="file"></input>
+                            </div>
+                        </div>
+                        <div class="enter-post">
+                            <input value="Post" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="videos">
+        <div class="video-items">
+            <div class="item">
+                <form>
+                    <div class="button">
+                        <button class="delete">Delete</button>
+                    </div>
+                </form>
+                <div class="video-title">
+                    Video1
+                </div>
+                <span class="desc">
+                    asdadsdd
+                </span>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JfVOs4VSpmA" frameborder="0"
+                    allowfullscreen></iframe>
+                </iframe>
+            </div>
+            <div class="item">
+                <form>
+                    <div class="button">
+                        <button class="delete">Delete</button>
+                    </div>
+                </form>
+                <div class="video-title">
+                    Video2
+                </div>
+                <span class="desc">
+                    dadsd
+                </span>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JfVOs4VSpmA" frameborder="0"
+                    allowfullscreen></iframe>
+                </iframe>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

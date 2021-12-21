@@ -58,3 +58,74 @@ a {
 .checkbox {
   margin-bottom: 2rem;
 }
+
+@media only screen and (max-width: 1024px) {
+  .form-cont p {
+    font-size: 2rem;
+  }
+
+  .signupbtn {
+    font-size: 2rem;
+  }
+
+  .cancelbtn {
+    font-size: 2rem;
+  }
+
+  .admin {
+    font-size: 2rem;
+  }
+
+  .prof {
+    font-size: 2rem;
+  }
+
+  .chalkboard a {
+    font-weight: 400;
+    font-size: 4rem;
+  }
+
+  .admin {
+    font-size: 2rem;
+  }
+
+  .stud {
+    font-size: 2rem;
+  }
+
+  .input-box input {
+    width: 93%;
+    padding: 0.625rem 10px;
+    font-size: 3rem;
+    letter-spacing: 0.062rem;
+    margin-bottom: 1.875rem;
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+  }
+
+  .container p {
+    font-weight: 400;
+    font-size: 3rem;
+  }
+
+  .checkbox label {
+    font-size: 2rem;
+  }
+
+  .checkbox input {
+    width: 2rem;
+  }
+}

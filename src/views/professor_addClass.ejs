@@ -4,32 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Chalkboard</title>
-    <link rel="stylesheet" href="src/css/student_add_course.css">
+    <link rel="stylesheet" href="css/student_add_course.css">
 </head>
 
 <body>
     <div class="main">
-        <form class="form-cont">
+        <form class="form-cont" action="/prof_adding_class" method="post">
             <div class="container">
-                <h1 class="chalkboard"><a href="index.html">Chalkboard Professor</a></h1>
+                <h1 class="chalkboard">Chalkboard Professor</h1>
+                <p class="error">
+                    <%= valid %>
+                </p>
                 <p> Create Course</p>
                 <div class="input-box">
                     <label></label>
-                    <input type="text" placeholder="Enter Code" name="code" required>
+                    <input type="text" placeholder="Enter Title" name="title" required>
                 </div>
                 <div class="input-box">
                     <label></label>
                     <input type="text" placeholder="Enter Description" name="desc" required>
                 </div>
             </div>
+            <button type="submit" class="add">Add</button>
         </form>
         <!-- have to move the anchor links into form in the future -->
-        <a href="professor_homePage.html">
+        <form name="back" method="post" action="/back_professor">
             <button type="submit" class="cancel">Cancel</button>
-        </a>
-        <a href="professor_homePage.html">
-            <button type="submit" class="add">Add</button>
-        </a>
+        </form>
     </div>
 </body>
 

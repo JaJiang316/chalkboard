@@ -9,21 +9,24 @@
 
 <body>
     <div class="main">
-        <form class="form-cont">
+        <form class="form-cont" method="post" action="/student_add_course">
             <div class="container">
                 <h1 class="chalkboard"><a onclick="location.href='student_homepage'">Chalkboard Student</a></h1>
+                <p class="error">
+                    <%= valid %>
+                </p>
                 <p> Add Course</p>
                 <div class="input-box">
                     <label></label>
                     <input type="text" placeholder="Enter Code" name="code" required>
                 </div>
             </div>
-            <button type="submit" class="add" onclick="location.href='student_homepage'">Add</button>
+            <button type="submit" class="add">Add</button>
         </form>
         <!-- have to move the anchor links into form in the future -->
-        <a onclick="location.href='student_homepage'">
+        <form name="back" method="post" action="/back_student">
             <button type="submit" class="cancel">Cancel</button>
-        </a>
+        </form>
     </div>
 </body>
 

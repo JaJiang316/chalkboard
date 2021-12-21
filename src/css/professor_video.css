@@ -4,12 +4,12 @@ body {
   font-family: sans-serif;
 }
 
-.assignment {
+.video {
   text-align: center;
   justify-content: center;
 }
 
-.assignment-items {
+.video-items {
   border: none;
   overflow: hidden;
   position: relative;
@@ -42,7 +42,7 @@ body {
   line-height: 1.25rem;
 }
 
-.assignment-post {
+.video-post {
   display: flex;
   flex-direction: column;
   border: 0.0625rem solid #dadce0;
@@ -64,13 +64,12 @@ body {
   flex-direction: column;
 }
 
-.assignment-page {
+.video-page {
   width: 100%;
   height: 5rem;
-  margin-bottom: 1rem;
 }
 
-.assignment-title {
+.video-title {
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -119,6 +118,7 @@ body {
 }
 
 .buttons {
+  padding-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -134,16 +134,7 @@ body {
   display: block;
 }
 
-.assignment {
-  text-decoration: none;
-  color: black;
-}
-
-.title {
-  text-align: center;
-}
-
-.assignment-video {
-  width: 100%;
-  margin-bottom: 1rem;
+.desc {
+  display: block;
+  padding-bottom: 1rem;
 }

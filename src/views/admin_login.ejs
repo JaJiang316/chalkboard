@@ -10,8 +10,11 @@
         <div class="main">
             <form class="form-cont" name="loginForm" action="/login_admin" method="post">
                 <div class="container">
-                    <h1 class="chalkboard"><a href="index.html">Chalkboard</a></h1>
+                    <h1 class="chalkboard"><a onclick="location.href='/'">Chalkboard</a></h1>
                     <p> Admin Login</p>
+                    <p>
+                        <%= valid %>
+                    </p>
                     <div class="input-box">
                         <label></label>
                         <input type="text" placeholder="Email" name="email" required>
@@ -23,7 +26,7 @@
                     <button type="submit" class="loginbtn">Login</button>
                 </div>
             </form>
-            <button type="submit" class="signup" onclick="location.href='/sign_up'">Sign Up</button>
+            <a class="signup" onclick="location.href='/sign_up'">Sign Up</a>
             <a class="stud" onclick="location.href='/'" > Enter as Student<br></a>
             <a class="prof" onclick="location.href='/login_professor'"> Enter as Professor<br></a>
         </div>

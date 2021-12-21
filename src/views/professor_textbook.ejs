@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chalkboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/professor_course_nav.css">  
+    <link rel="stylesheet" href="/css/professor_textbook.css"> 
+</head>
+<body>
+    <%- include('../partials/professor_header') %>
+    <div class="textbook">
+        <div class="title">
+            <h1>Textbook Manager</h1>
+        </div>
+        <div class="textbook-items">
+            <form>
+                <div class="textbook-post">
+                    <div class="enter">
+                        <label for="textbook-title">Title:</label>
+                        <input placeholder="Enter Textbook" class="textbook-title" name="textbook-title" type="text">
+                        <label for="textbooks">Pages:</label>
+                        <textarea placeholder="Enter Textbook pages" class="textbook-page" name="textbooks" type="text"></textarea>
+                    </div>
+                    <div class="enter-post">
+                        <input value="Post" type="submit">
+                    </div>
+                </div>
+            </form>
+            <div class="item">
+                <div class="text">
+                    Textbook1
+                </div>
+                <span>
+                    Read pg 1 Chapter 1
+                </span>
+                <div class="button">
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    Textbook2
+                </div>
+                <span>
+                    Read pg 32 Chapter 3.
+                </span>
+                <div class="button">
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
