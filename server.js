@@ -1263,7 +1263,33 @@ app.post('/join_class', function (req, res) {
 
 app.post('/delete_course', function (req, res) {
   let sess = req.session;
-  let id = req.query.id;
-  console.log(id)
-  console.log(sess)
+  let data = req.body.delete;
+  User.find({}, function (err, users) {
+    if(err){
+      return err
+    }
+    else{
+      users.map(user => {
+        if(user.courses.includes(data)){
+          user.courses.remove(data);
+          user.save((err, updatedcourse) => {
+              if(err) {
+                return console.log(err);
+              }
+            })
+        }
+      })
+    }
+  })
+  Course.findOneAndRemove({courseId: data}, function (err, doc){
+    if (err) console.log(err);
+    User.findOne({unique_id: sess.userId}, function (err, user){
+      getEnrolledCourses(user, 'professor_homepage', res);
+    })
+  });
+})
+
+app.post('/add_assignment', function (req, res) {
+  let sess = req.session;
+  let data = req.body.delete;
 })

@@ -170,12 +170,13 @@
         </tr>
       </table>
     </div>
-    <!-- <form method="post" action="/delete_course">
+    <form method="POST" action="/delete_course">
       <div class="delete">
-        <input type="id" hidden value=<%= courseid %> >
-        <button class="delete-button">Delete Course</button>
+        <label></label>
+        <input type="hidden" name= "delete" value=<%= courseid %> >
+        <button type="submit" class="delete-button">Delete Course</button>
       </div>
-    </form> -->
+    </form>
   </div>
 </body>
 </html>
