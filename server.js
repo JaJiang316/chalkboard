@@ -1420,10 +1420,8 @@ app.post('/accept', function(req, res){
 
 app.post('/kick', function (req, res){
   sess = req.session;
-  // console.log(req.body)
   let id = req.body.kick;
   let code = req.body.code;
-  // console.log(code);
   User.findOneAndUpdate({unique_id: id}, {$pull: {courses: code}}, function (err, user){
     if (err) {
       return console.log(err)
@@ -1454,12 +1452,12 @@ app.post('/kick', function (req, res){
         course.students.forEach(student => {
           students.push(student);
         })
-        return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: code});
+        return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: id});
       });
     }
     else if(user.userType == "student") {
       Course.findOneAndUpdate({courseId: code}, {$pull: {students: {id: id}}}, function (err, course) {
-        console.log(course)
+        // console.log(course)
         if (err) {
           return console.log(err)
         }
@@ -1483,7 +1481,7 @@ app.post('/kick', function (req, res){
         course.students.forEach(student => {
           students.push(student);
         })
-        return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: code});
+        return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: id});
       })
     }
   })
