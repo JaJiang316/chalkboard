@@ -619,7 +619,8 @@ courseSchema = new Schema({
     assignments: [
       { //1 assignment
         id: {
-          type: Number
+          type: Number,
+          required: true
         },
         title: {
           type: String
@@ -1154,11 +1155,12 @@ app.get('/course/:id/assignments', function (req, res) {
         // console.log(course);
         course.forEach(assignment => {
           if(assignment.assignments.length != 0){
-            items.push(assignment)
+            // console.log(assignment.assignments);
+            items.push(assignment.assignments)
           }
         })
-        // console.log(items);
-        return res.render("professor_assignment", {assignment: items, courseid: id});
+        console.log(items);
+        return res.render("professor_assignment", {assignment: items[0], courseid: id});
       })
   }
   else if(sess.user == "student"){
@@ -1166,17 +1168,18 @@ app.get('/course/:id/assignments', function (req, res) {
       let items = []
       // console.log(course);
       course.forEach(assignment => {
+        console.log(assignment.assignments.length)
         if(assignment.assignments.length != 0){
-          items.push(assignment)
+          items.push(assignment.assignments)
         }
       })
-      // console.log(items);
-      return res.render("student_assignment", {assignment: items, courseid: id, user: userid});
+      console.log(items);
+      return res.render("student_assignment", {assignment: items[0], courseid: id, user: userid});
     })
   }
 })
 
-app.get('/course/:id/:userid/:assignmentid', function (req, res) {
+app.get('/course/:id/:userId/:assignmentid', function (req, res) {
 
 })
 
@@ -1193,6 +1196,7 @@ app.get('/course/:id/coursemanager', function (req, res) {
     let professors = [];
     requesting.forEach(request => {
       if(request.userType == "student"){
+        // console.log(request)
         reqstudents.push(request);
       }
       else if(request.userType == "professor"){
@@ -1291,5 +1295,111 @@ app.post('/delete_course', function (req, res) {
 
 app.post('/add_assignment', function (req, res) {
   let sess = req.session;
-  let data = req.body.delete;
+  let data = req.body;
+  let code = req.body.code;
+  // console.log(data)
+  let c;
+  let questions = []
+  let countquestion = Object.keys(req.body).length;
+  let arr = Object.keys(req.body)
+  // console.log(arr)
+  // console.log(Object.keys(req.body))
+  for(let i = 4; i<countquestion-3; i++){
+    let item = arr[i]
+    // console.log(data[item])
+    let question = {
+      question: data[item]
+    }
+    questions.push(question)
+  }
+  // console.log(questions)
+  Course.findOne({courseId: code}, function (err, course) {
+    if (course) {
+      c = course.assignments.length + 1
+    } else {
+      c = 1;
+    }
+    let assignment = {
+    id: c,
+    title: data.assignment_title,
+    due_date: data.due_date,
+    instruction: data.assignment,
+    video: data.assignment_video,
+    answer_sheet: data.answer_sheet,
+    assignment_questions: questions
+  }
+    course.assignments.push(assignment);
+    course.save((err, updatedcourse) => {
+      if(err) {
+        return console.log(err);
+      }
+    })
+    Course.find({courseId: code}, function (err, course){
+        let items = []
+        // console.log(course);
+        course.forEach(assignment => {
+          if(assignment.assignments.length != 0){
+            items.push(assignment)
+          }
+        })
+        // console.log(items);
+        return res.render("professor_assignment", {assignment: items, courseid: code});
+      })
+  })
 })
+
+app.post('/deny', function(req, res){
+  sess = req.session;
+  let id = req.body.deny;
+  let code = req.body.code;
+  User.findOne({unique_id: sess.userId}, function (err, user){
+    Course.findOneAndUpdate( {courseId: code}, {$pull: {requesting: {id: id}}}, (err) => {
+      if (err) {
+          return console.log(err)
+      }else{
+        getEnrolledCourses(user, 'professor_homepage', res);
+      }
+    })
+  })
+})
+
+app.post('/accept', function(req, res){
+  sess = req.session;
+  let id = req.body.accept;
+  let code = req.body.code;
+  User.findOne({unique_id: id}, function (err, user){
+    user.courses.push(code);
+    user.save((err, updatedcourse) => {
+      if(err) {
+        return console.log(err);
+      }
+    })
+    Course.findOne({courseId: code}, function (err, course) {
+      if(user.userType == "professor"){
+        let instructor = {
+          name: `${user.first} ${user.last}`,
+          id: user.unique_id
+        }
+        course.instructors.push(instructor)
+        course.save((err, updatedcourse) => {
+          if(err) {
+            return console.log(err);
+          }
+        })
+      }else if(user.userType == "student"){
+        let student = {
+          name: `${user.first} ${user.last}`,
+          id: user.unique_id
+        }
+        course.students.push(student)
+        course.save((err, updatedcourse) => {
+          if(err) {
+            return console.log(err);
+          }
+        })
+      }
+      getEnrolledCourses(user, 'professor_homepage', res);
+    })
+  })
+})
+

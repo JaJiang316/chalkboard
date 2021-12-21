@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/css/professor_course_nav.css">
     <link rel="stylesheet" href="/css/professor_assignment.css">
+    <script type="text/javascript" src="/script/script.js"></script>
 </head>
 <body>
     <%- include('../partials/professor_header') %>
@@ -18,48 +19,49 @@
                 <div class="assignment-post">
                     <div class="enter">
                         <label for="assignment-title">Title</label>
-                        <input placeholder="Enter Assignment title" class="assignment-title" name="assignment-title" type="text">
+                        <input placeholder="Enter Assignment title" class="assignment-title" name="assignment_title" type="text" required>
                         <label for="due-date">Due Date</label>
-                        <input type="date" name="due-date" class="due-date">
+                        <input type="date" name="due_date" class="due-date">
                         <label for="assignment">Instructions</label>
-                        <textarea placeholder="Enter Assignment instructions" class="assignment-page" name="assignment" type="text"></textarea>
+                        <textarea placeholder="Enter Assignment instructions" class="assignment-page" name="assignment" type="text" required></textarea>
                         <label for="assignment-video">Video</label>
-                        <textarea placeholder="Enter video link" class="assignment-video" name="assignment" type="text"></textarea>
+                        <textarea placeholder="Enter video link" class="assignment-video" name="assignment_video" type="text"></textarea>
                     </div>
                     <div class = questions>
-                        <h1>Questions</h1>
-                        <button class="delete" for="question1">Delete</button>
+                        <h1 class ="quest_questions">Questions</h1>
+                        <!-- <button class="delete" for="question1">Delete</button>
                         <label for="question1">Question 1</label>
                         <textarea placeholder="Add Question" class="question-page" name="question1" type="text"></textarea>
                         <button class="delete" for="question2">Delete</button>
                         <label for="question2">Question 2</label>
-                        <textarea placeholder="Add Question" class="question-page" name="question2" type="text"></textarea>
+                        <textarea placeholder="Add Question" class="question-page" name="question2" type="text"></textarea> -->
                     </div>
                     <div class="buttons">
                         <div class = "add-buttons">
                             <div class="add-answer">
                                 <label for="answer-sheet">Answersheet: </label>
-                                <input value="Add Answersheet" name="answer-sheet" type="file"></input>
-                            </div>
-                            <div class="add-question">
-                                <input value="Add Question" type="submit"></input>
+                                <input value="Add Answersheet" name="answer_sheet" type="file"></input>
                             </div>
                         </div>
                         <div class="enter-post">
-                            <input value="Post" type="submit">
+                            <input hidden name="code" value=<%=courseid %> >
+                            <input type="submit" name="Post" >
                         </div>
                     </div>
                 </div>
             </form>
-            <% if(assignment !=null) { assignment.forEach(function(assignment) { %>
-                <a href="/course/<%- courseid %>/ <%- assignmentid %>" class="work">
+            <div class="add-question">
+                <button id="add_question" value="Add Question" onClick="add_question()">Add Question</button>
+            </div>
+            <% if(assignment != null ) { assignment.forEach(function(assignment) { %>
+                <a href="/course/<%- courseid %>/ <%- assignment.id %>" class="work">
                     <div class="item">
                         <div class="text">
                             <%= assignment.title %>
                             <span class="due">Due date: <%= assignment.duedate %></span>
                         </div>
                         <span>
-                            <%= assignment.description %>
+                            <%= assignment.instruction %>
                         </span>
                     </div>
                 </a>

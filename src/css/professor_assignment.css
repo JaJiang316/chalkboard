@@ -109,7 +109,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.add-question input {
+.add-question button {
   background: #1a73e8;
   padding: 8px 15px;
   border-radius: 4px;
@@ -146,4 +146,9 @@ body {
 .assignment-video {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.work {
+  text-decoration: none;
+  color: black;
 }
