@@ -1,5 +1,43 @@
 # Chalkboard
 
+# Chalkboard Live Website
+
+[Chalkboard Website](https://chalk-board-app.herokuapp.com/)
+
+# Features
+
+- Responsive Design for mobile, tablet, and desktop
+- Clear Navigation
+- Save Draft of Assignments
+- Course Homepage
+
+# Purpose of the Website
+
+The website allows professors to create courses for students where they can create multiple courses each with their own individual assignments, lessons, videos, etc. For students they are able to request to join professor created courses and complete assignments with the ability to save assignments as drafts to work on later. Overall the website is designed to allow for a classroom based setting for professors and students to interact.
+
+# Visuals
+
+### Desktop
+
+![Desktop](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/desktop_signin.PNG)
+![Desktop](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/desktop_signup.PNG)
+![Desktop](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/desktop_homepage.PNG)
+![Desktop](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/desktop_course.PNG)
+
+### Tablet
+
+![Tablet](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/tablet_signin.PNG)
+![Tablet](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/tablet_signup.PNG)
+![Tablet](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/tablet_homepage.PNG)
+![Tablet](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/tablet_course.PNG)
+
+### Mobile
+
+![Mobile](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/mobile_signin.PNG)
+![Mobile](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/mobile_signup.PNG)
+![Mobile](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/mobile_homepage.PNG)
+![Mobile](https://github.com/DavidGuzman1999/chalkboard/blob/main/screenshots/mobile_course.PNG)
+
 # D0 WireFrame and SiteMap:
 
 ## WireFrame
@@ -46,3 +84,11 @@ David Guzman
 Jason Jiang
 
 - I completed the css the login, signup, student, and the majority of the professor side of the css. I tried to make the website as responsive as possible, with my design inspiration coming from the design of google classroom. As I added more css to the pages I noticed I needed to redo some of the html side of the application. I checked to see if the application was responsive using the inspect element and i noticed that i didnt really need to change the reponsiveness of the website and it is reponsive already I just needed to change the student and professor homepage so the classes will fill the whole row on smaller screens.
+
+# D3 User Management
+
+[Chalkboard Website](https://chalk-board-app.herokuapp.com/)
+
+Jason Jiang
+
+- Created the user schema's, turned student and login html into ejs, setup express backend, created mongo database, hosted application on heroku, initialized user sign up and signin. When the user signs up we hash and salt their password and then store it in the db. I also created sessions for the application when you sign in so you cant copy and paste the url to get into the application from another browser, keeps you logged in even when you close the tab for 24 hours. Currently working on creating a schema for classes and assginments for when professors create classes that hold videos, assignments,lectures and much more. Feedback was also taken from deliverable 2 and I increased the css ratio for smaller screens under screen size of 1000px. Added Features, Purpose of the Website and Images to the ReadMe.
