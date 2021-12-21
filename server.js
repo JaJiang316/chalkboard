@@ -1420,31 +1420,70 @@ app.post('/accept', function(req, res){
 
 app.post('/kick', function (req, res){
   sess = req.session;
+  // console.log(req.body)
   let id = req.body.kick;
   let code = req.body.code;
+  // console.log(code);
   User.findOneAndUpdate({unique_id: id}, {$pull: {courses: code}}, function (err, user){
-    console.log(user)
     if (err) {
       return console.log(err)
     }
-    else if(user.UserType == "professor"){
-      console.log("hello")
+    else if(user.userType == "professor"){
       Course.findOneAndUpdate({courseId: code}, {$pull: {instructors: {id: id}}}, function (err, course) {
         // console.log(course)
         if (err) {
           return console.log(err)
         }
-        getEnrolledCourses(user, 'professor_homepage', res);
-      })
+        let requesting = course.requesting;
+        let reqstudents = [];
+        let reqprofessors = [];
+        let students = [];
+        let professors = [];
+        requesting.forEach(request => {
+          if(request.userType == "student"){
+            // console.log(request)
+            reqstudents.push(request);
+          }
+          else if(request.userType == "professor"){
+            reqprofessors.push(request);
+          }
+        })
+        course.instructors.forEach(teach => {
+          professors.push(teach);
+        })
+        course.students.forEach(student => {
+          students.push(student);
+        })
+        return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: code});
+      });
     }
-    else if(user.UserType == "student") {
-      console.log("hello")
+    else if(user.userType == "student") {
       Course.findOneAndUpdate({courseId: code}, {$pull: {students: {id: id}}}, function (err, course) {
-        // console.log(course)
+        console.log(course)
         if (err) {
           return console.log(err)
         }
-        getEnrolledCourses(user, 'professor_homepage', res);
+        let requesting = course.requesting;
+        let reqstudents = [];
+        let reqprofessors = [];
+        let students = [];
+        let professors = [];
+        requesting.forEach(request => {
+          if(request.userType == "student"){
+            // console.log(request)
+            reqstudents.push(request);
+          }
+          else if(request.userType == "professor"){
+            reqprofessors.push(request);
+          }
+        })
+        course.instructors.forEach(teach => {
+          professors.push(teach);
+        })
+        course.students.forEach(student => {
+          students.push(student);
+        })
+        return res.render("professor_courseManager", {reqstudents: reqstudents, reqprofessors: reqprofessors, students: students, professors: professors, courseid: code});
       })
     }
   })
