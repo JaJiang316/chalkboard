@@ -57,11 +57,18 @@
                 <a href="/course/<%- courseid %>/ <%- assignment.id %>" class="work">
                     <div class="item">
                         <div class="text">
-                            <%= assignment.title %>
+                            Title: <%= assignment.title %>
                             <span class="due">Due date: <%= assignment.duedate %></span>
                         </div>
+                        <!-- <% if(!assignment.video) { %>
+                            <div>
+                                <iframe width="560" height="315" src="<%= assignment.video %>" frameborder="0"
+                                    allowfullscreen></iframe>
+                                </iframe>
+                            </div>
+                        <% } %> -->
                         <span>
-                            <%= assignment.instruction %>
+                            Instructions: <%= assignment.instruction %>
                         </span>
                     </div>
                 </a>

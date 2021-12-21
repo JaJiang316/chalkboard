@@ -22,31 +22,29 @@
         <h2>Requesting</h2>
       </div>
       <table class="table">
-        <form>
-          <% if(reqprofessors !=null ) { reqprofessors.forEach(function(professor) { %>
-            <tr class="row">
-              <td class="data">
-                <div class="person">
-                  <span><%= professor.name %></span>
-                </div>
-              </td>
-              <td class="course-buttons">
-                <div class="buttons">
-                  <form method="post" action="/accept">
-                    <input hidden name="accept" value=<%= professor.id %>>
-                    <input hidden name="code" value=<%= courseid %>>
-                    <button class="accept">Accept</button>
-                  </form>
-                  <form method="post" action="/deny">
-                    <input hidden name="deny" value=<%= professor.id %>>
-                    <input hidden name="code" value=<%= courseid %>>
-                    <button class="deny">Deny</button>
-                  </form>
-                </div>
-              </td>
-            </tr>
-          <% }) } %>
-        </form>
+        <% if(reqprofessors !=null ) { reqprofessors.forEach(function(professor) { %>
+          <tr class="row">
+            <td class="data">
+              <div class="person">
+                <span><%= professor.name %></span>
+              </div>
+            </td>
+            <td class="course-buttons">
+              <div class="buttons">
+                <form method="post" action="/accept">
+                  <input hidden name="accept" value=<%= professor.id %>>
+                  <input hidden name="code" value=<%= courseid %>>
+                  <button class="accept">Accept</button>
+                </form>
+                <form method="post" action="/deny">
+                  <input hidden name="deny" value=<%= professor.id %>>
+                  <input hidden name="code" value=<%= courseid %>>
+                  <button class="deny">Deny</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        <% }) } %>
         <% if(reqstudents !=null ) { reqstudents.forEach(function(student) { %>
           <tr class="row">
             <td class="data">
@@ -90,8 +88,14 @@
             </td>
             <td class="course-buttons">
               <div class="buttons">
-                <button class="promote">Promote</button>
-                <button class="kick">Kick</button>
+                <!-- <form method="post" action="/promote">
+                  <button class="promote">Promote</button>
+                </form> -->
+                <form method="post" action="/kick">
+                  <input hidden name="kick" value=<%=professor.id %>>
+                  <input hidden name="code" value=<%=courseid %>>
+                  <button class="kick">Kick</button>
+                </form>
               </div>
             </td>
           </tr>
@@ -116,48 +120,26 @@
         <h2>Students</h2>
       </div>
       <table class="table">
-        <form>
-          <% if(students !=null ) { students.forEach(function(student) { %>
-            <tr class="row">
-              <td class="data">
-                <div class="person">
-                  <span>
-                    <%= student.name %>
-                  </span>
-                </div>
-              </td>
-              <td class="course-buttons">
-                <div class="buttons">
-                  <button class="kick">Kick</button>
-                </div>
-              </td>
-            </tr>
-            <% }) } %>
-          <!-- <tr class="row">
+        <% if(students !=null ) { students.forEach(function(student) { %>
+          <tr class="row">
             <td class="data">
               <div class="person">
-                <span>Student1</span>
+                <span>
+                  <%= student.name %>
+                </span>
               </div>
             </td>
             <td class="course-buttons">
               <div class="buttons">
-                <button class="kick">Kick</button>
+                <form method="post" action="/kick">
+                  <input hidden name="kick" value=<%=student.id %>>
+                  <input hidden name="code" value=<%=courseid %>>
+                  <button class="kick">Kick</button>
+                </form>
               </div>
             </td>
           </tr>
-        </form>
-        <tr class="row">
-          <td class="data">
-            <div class = "person">
-              <span>Student2</span>
-            </div>
-          </td>
-          <td class="course-buttons">
-            <div class="buttons">
-              <button class="kick">Kick</button>
-            </div>
-          </td>
-        </tr> -->
+          <% }) } %>
       </table>
     </div>
     <form method="POST" action="/delete_course">
